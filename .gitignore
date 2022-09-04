@@ -1,0 +1,6 @@
+venv
+cleaned_transcriptions/*
+transcriptions/*
+
+!cleaned_transcriptions/.gitkeep
+!transcriptions/.gitkeep
