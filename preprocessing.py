@@ -4,6 +4,7 @@ import re
 from tabulate import tabulate
 
 def remove_punctuations(document: str) -> str:
+    allowed_characters = {" ", ".", ",", ";", "\n"}
     #We remove unnecesary, repeated texts
     document = document.replace("(inaudible)", "").replace("(Inaudible)", "")
 
@@ -22,7 +23,7 @@ def remove_punctuations(document: str) -> str:
             continue
 
         #If the character is alphanumeric, we add it to the string.
-        if document[i].isalnum() or document[i] == " ":
+        if document[i].isalnum() or document[i] in allowed_characters:
             filtered_document += document[i]
     
     #We remove the tracing whitespaces
